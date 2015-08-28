@@ -1,11 +1,27 @@
 /*
-  Web Server
-A simple web server
+This script doesn't use MySensors library!
+
+It is just a basic example of how to connect an Arduino UNO with an Ethernet Shield to your network.
+It creates a simple webserver and hosts a single page of action links accessible via an IP address: 
+
+IPAddress ip(192,168,0,161);
+
+To easily find your IP gateway, open a Command Prompt and type:
+  ipconfig /all
+and then look for the value for Default Gateway. You can then select a high number like 161 as the last number in your IPAddress.
+
+Sensors/Actuators:
+You can output whatever sensor data you want to the webpage, and act on clicks of links. In this example, we control a 4 Channel Relay controlling lights in a room.
+
 Circuit:
-* Ethernet shield attached to pins 10, 11, 12, 13
-* plus Ethernet cable to shield and your modem/router.
+ 1. Ethernet shield attached to pins 10, 11, 12, 13
+ 2. plug Ethernet cable to shield and your modem/router.
+
+
 */
 //-------------------------------------------------------------------------------------------------------
+
+
 #include <SPI.h>
 #include <Ethernet.h>
 
