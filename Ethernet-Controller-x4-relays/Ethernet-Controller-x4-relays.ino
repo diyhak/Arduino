@@ -14,9 +14,9 @@ Sensors/Actuators:
 You can output whatever sensor data you want to the webpage, and act on clicks of links. In this example, we control a 4 Channel Relay controlling lights in a room.
 
 Circuit:
- 1. Ethernet shield attached to pins 10, 11, 12, 13
- 2. plug Ethernet cable to shield and your modem/router.
-
+   1. Ethernet shield attached to pins 10, 11, 12, 13
+   2. plug Ethernet cable to shield and your modem/router.
+   3. Plug in your 4 Channel shield to digital pins 6, 7, 8 9
 
 */
 //-------------------------------------------------------------------------------------------------------
