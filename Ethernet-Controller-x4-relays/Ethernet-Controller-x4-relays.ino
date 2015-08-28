@@ -19,8 +19,6 @@ Circuit:
    3. Plug in your 4 Channel shield to digital pins 6, 7, 8 9
 
 */
-//-------------------------------------------------------------------------------------------------------
-
 
 #include <SPI.h>
 #include <Ethernet.h>
@@ -38,34 +36,27 @@ IPAddress subnet(255, 255, 255, 0);
 // Initialize the Ethernet server library with the port you want to use.
 EthernetServer server(80);
 String readString;
-//-------------------------------------------------------------------------------------------------------
-//-------------------------------------------------
-// Any extra codes for Declaration :
 
 // Declare Pins
 int relay1 = 6; 
 int relay2 = 7; 
 int relay3 = 8; 
 int relay4 = 9;  
-//-------------------------------------------------
-//-------------------------------------------------------------------------------------------------------
+
 void setup()
 {
-//-------------------------------------------------
+  // Extra Set up code:
+  pinMode(relay1, OUTPUT); //pin selected to control
+  pinMode(relay2, OUTPUT); //pin selected to control
+  pinMode(relay3, OUTPUT); //pin selected to control
+  pinMode(relay4, OUTPUT); //pin selected to control
 
-// Extra Set up code:
-pinMode(relay1, OUTPUT); //pin selected to control
-pinMode(relay2, OUTPUT); //pin selected to control
-pinMode(relay3, OUTPUT); //pin selected to control
-pinMode(relay4, OUTPUT); //pin selected to control
-
- digitalWrite(relay1, HIGH); 
- digitalWrite(relay2, HIGH); 
- digitalWrite(relay3, HIGH); 
- digitalWrite(relay4, HIGH); 
-//-------------------------------------------------
-//-------------------------------------------------------------------------------------------------------
-//enable serial data print
+  digitalWrite(relay1, HIGH); 
+  digitalWrite(relay2, HIGH); 
+  digitalWrite(relay3, HIGH); 
+  digitalWrite(relay4, HIGH); 
+  
+  //enable serial data print
   Serial.begin(9600);
 
   //start Ethernet
@@ -73,10 +64,7 @@ pinMode(relay4, OUTPUT); //pin selected to control
   server.begin();
   Serial.print("Server is at ");
   Serial.println(Ethernet.localIP());
- // Serial.println("Tri-Relay Controller Test");
 }
-//-------------------------------------------------------------------------------------------------------
-//-------------------------------------------------------------------------------------------------------
 
 void loop()
 {
@@ -98,11 +86,9 @@ void loop()
         if (readString.length() < 100)
 
         {
-
           //store characters to string
           readString += c;
           //Serial.print(c);
-
 
           Serial.write(c);
           // if you've gotten to the end of the line (received a newline
@@ -112,8 +98,8 @@ void loop()
           if (c == '\n') {
             Serial.println(readString); //print to serial monitor for debuging
 //--------------------------------------------------------------------------------------------------------
-// Needed to Display Site:
-client.println("HTTP/1.1 200 OK"); //send new page
+            // Needed to Display Site:
+            client.println("HTTP/1.1 200 OK"); //send new page
             client.println("Content-Type: text/html");
             client.println();
             client.println("<HTML>");
@@ -130,22 +116,19 @@ client.println("HTTP/1.1 200 OK"); //send new page
             client.println("<BODY>");
             client.println("<center>");
             client.println("<H1>Relay Group 1</H1>");
-            client.println("<hr />");
-         
+            client.println("<hr />");         
 
             client.println("<a href=\"/?relay1-on\"\">Turn On Relay 1</a>");
             client.println("<br />");
             client.println("<br />");
             client.println("<a href=\"/?relay1-off\"\">Turn Off Relay 1</a><br />");     
-            client.println("<hr />");
-            
+            client.println("<hr />");            
 
             client.println("<a href=\"/?relay2-on\"\">Turn On Relay 2</a>");
             client.println("<br />");
             client.println("<br />");
             client.println("<a href=\"/?relay2-off\"\">Turn Off Relay 2</a><br />");     
-            client.println("<hr />");
-           
+            client.println("<hr />");           
 
             client.println("<a href=\"/?relay3-on\"\">Turn On Relay 3</a>");
             client.println("<br />");
