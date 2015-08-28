@@ -1,7 +1,13 @@
 /*
-This script doesn't use MySensors library!
 
-It is just a basic example of how to connect an Arduino UNO with an Ethernet Shield to your network.
+http://blog.diyhak.com - All our tutorials
+http://www.facebook.com/diyhomeautomationkits  - follow general stuff here
+http://stores.ebay.com.au/diyhomeautomationkits - buy stuff here
+
+NOTE: This script doesn't use MySensors library! It is just a basic example of how to connect an Arduino UNO with an Ethernet Shield to your network.
+
+What is does:
+
 It creates a simple webserver and hosts a single page of action links accessible via an IP address: 
 
 IPAddress ip(192,168,0,161);
@@ -17,6 +23,8 @@ Circuit:
    1. Ethernet shield attached to pins 10, 11, 12, 13
    2. plug Ethernet cable to shield and your modem/router.
    3. Plug in your 4 Channel shield to digital pins 6, 7, 8 9
+
+Load this script and then open the IP Address.. that's it!
 
 */
 
