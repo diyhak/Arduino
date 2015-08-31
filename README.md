@@ -3,9 +3,9 @@ A general repository of various Arduino scripts dedicated to Home Automation.
 
 You can see our blog at http://blog.diyhak.com. 
 
-Our eBay store at https://stores.ebay.com.au/diyhomeautomation
+Our eBay store at https://stores.ebay.com.au/diyhomeautomationkits
 
-Please follow us at http://www.facebook.com/diyhomeautomation
+Please follow us at http://www.facebook.com/diyhomeautomationkits
 
 PLEASE NOTE:
 
